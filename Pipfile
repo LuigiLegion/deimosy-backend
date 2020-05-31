@@ -12,6 +12,8 @@ flask = "*"
 gunicorn = "*"
 pathfinding = "*"
 flask-cors = "*"
+numpy = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"
