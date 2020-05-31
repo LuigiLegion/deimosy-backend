@@ -1,7 +1,9 @@
 # Imports
 import math
 from pathfinding.finder.finder import Finder
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS
+import json
 
 
 # Initializations
@@ -28,12 +30,24 @@ Finder.calc_cost = calc_cost
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 # Routes
-@app.route('/path')
-def index():
-    return 'PLACEHOLDER'
+@app.route('/path', methods=['POST'])
+def path():
+    if request.method == 'POST':
+        body_str = request.get_json().get('body')
+        body_dict = json.loads(body_str)
+
+        start_dict = body_dict['start']
+        end_dict = body_dict['end']
+
+        start = (start_dict['x'], start_dict['y'])
+        end = (end_dict['x'], end_dict['y'])
+        print('start: ', start, 'end: ', end)
+
+        return 'PLACEHOLDER'
 
 
 if __name__ == '__main__':
