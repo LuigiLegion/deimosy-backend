@@ -13,7 +13,6 @@ from pathfinding.core.diagonal_movement import DiagonalMovement
 
 # Constants
 DEFAULT_IMAGE = 'static/3.png'
-IMAGES_FOLDER = os.path.join('static')
 
 
 # Initializations
@@ -42,22 +41,11 @@ Finder.calc_cost = calc_cost
 
 # Create server
 app = Flask(__name__)
-# Configure upload folder
-app.config['UPLOAD_FOLDER'] = IMAGES_FOLDER
 # Enable CORS
 CORS(app)
 
 
 # Routes
-@app.route('/image', methods=['GET'])
-def image():
-    if request.method == 'GET':
-        # Create full image path
-        img_path = os.path.join(app.config['UPLOAD_FOLDER'], '1.png')
-
-        return render_template("image.html", image=img_path)
-
-
 @app.route('/path', methods=['POST'])
 def path():
     if request.method == 'POST':
