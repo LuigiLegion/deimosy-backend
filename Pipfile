@@ -12,7 +12,6 @@ flask = "*"
 gunicorn = "*"
 pathfinding = "*"
 flask-cors = "*"
-numpy = "*"
 pillow = "*"
 
 [requires]
