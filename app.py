@@ -52,10 +52,8 @@ def path():
         coords = coordinates(request)
         # Create image from image file path
         img = Image.open(DEFAULT_IMAGE)
-        # Resize image to match image size on client side
-        resized_img = img.resize((img.width - 42, img.height))
         # Find optimal path based on start and end points
-        path = find_optimal_path(resized_img, coords)
+        path = find_optimal_path(img, coords)
 
         return jsonify(path)
 
