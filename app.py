@@ -1,7 +1,6 @@
 # Imports
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-import os
 import json
 import math
 from PIL import Image
@@ -12,7 +11,7 @@ from pathfinding.core.diagonal_movement import DiagonalMovement
 
 
 # Constants
-DEFAULT_IMAGE = 'static/3.png'
+DEFAULT_IMAGE = 'static/1.png'
 
 
 # Initializations
@@ -38,9 +37,9 @@ def calc_cost(self, node_a, node_b):
 # Monkey patch my variant of calc_cost method to pathfinding Finder class
 Finder.calc_cost = calc_cost
 
-
 # Create server
 app = Flask(__name__)
+
 # Enable CORS
 CORS(app)
 
@@ -61,7 +60,7 @@ def path():
         return jsonify(path)
 
 
-# Helpers
+# Utilities
 def coordinates(req):
     # Extract body string from request JSON
     body_str = req.get_json().get('body')
