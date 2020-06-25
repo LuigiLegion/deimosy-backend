@@ -11,7 +11,7 @@ from pathfinding.core.diagonal_movement import DiagonalMovement
 
 
 # Constants
-DEFAULT_IMAGE = 'static/1.png'
+DEFAULT_IMAGE = 'static/images/1.png'
 
 
 # Initializations
