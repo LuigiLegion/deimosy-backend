@@ -30,5 +30,6 @@ def path():
         return jsonify(path)
 
 
+# Run server
 if __name__ == '__main__':
     app.run()
