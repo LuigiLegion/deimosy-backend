@@ -17,7 +17,7 @@ CORS(app)
 
 
 # Routes
-@app.route('/path', methods=['POST'])
+@app.route('/api/path', methods=['POST'])
 def path():
     if request.method == 'POST':
         # Extract start and end points coordinates from request
@@ -30,5 +30,6 @@ def path():
         return jsonify(path)
 
 
+# Run server
 if __name__ == '__main__':
     app.run()
