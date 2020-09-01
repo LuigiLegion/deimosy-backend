@@ -27,7 +27,7 @@ def path():
         # Find optimal path based on start and end points
         path = find_optimal_path(img, coords)
 
-        return jsonify(path)
+        return jsonify(path), 200
 
 
 # Run server
